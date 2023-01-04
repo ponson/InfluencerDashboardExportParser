@@ -190,12 +190,14 @@ def campaign_search_opt_analyze(data):
 
 def output_influencer_option_search_usage_count(w):
     df = pd.DataFrame({'Options': options_name.values(), 'Counts': options_count.values()})
+    df = df.drop([9, 11, 13])  # Remove useless rows
     df = df.sort_values(by=['Counts'], ascending=False)
     df.to_excel(w, sheet_name='InfluencerSearchOptionUsage')
 
 
 def output_campaign_option_search_usage_count(w):
     df = pd.DataFrame({'Options': campaign_option_name.values(), 'Counts': campaign_option_count.values()})
+    df = df.drop([6])  # Remove useless rows
     df = df.sort_values(by=['Counts'], ascending=False)
     df.to_excel(w, sheet_name='CampaignSearchOptionUsage')
 
