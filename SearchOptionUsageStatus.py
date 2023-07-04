@@ -129,6 +129,7 @@ CAMPAIGN_SEARCH_OPT_LOG_FILE = r"data/campaign_search_opt_logs.csv"
 def one_row_inf_search_opt_parser(row_data):
     items = row_data.split('\n')
     items.remove("")
+    print(f"one row is: {row_data}")
     a_dict = dict((k.strip(), v.strip())
                   for k, v in (item.split(':') for item in items))
     try:
