@@ -131,7 +131,7 @@ def one_row_inf_search_opt_parser(row_data):
     items.remove("")
     print(f"one row is: {row_data}")
     a_dict = dict((k.strip(), v.strip())
-                  for k, v in (item.split(':') for item in items))
+                  for k, v in (item.split(':', 1) for item in items))
     try:
         page_num = a_dict[PAGE_NUM].strip("[]\"")
         if page_num == '1':
@@ -171,7 +171,7 @@ def one_row_campaign_search_opt_parser(row_data):
     items = row_data.split('\n')
     items.remove("")
     a_dict = dict((k.strip(), v.strip())
-                  for k, v in (item.split(':') for item in items))
+                  for k, v in (item.split(':', 1) for item in items))
 
     for key_label in campaign_option_count.keys():
         try:
